@@ -1,0 +1,41 @@
+{
+  "name": "fastify-test-api",
+  "version": "0.0.0",
+  "author": {
+    "name": "Ivan Polushin",
+    "url": "https://t.me/polioan"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=16"
+  },
+  "engineStrict": true,
+  "scripts": {
+    "build": "tsc",
+    "build:start": "npm run build && npm run start",
+    "start": "cross-env NODE_ENV=production node dist/main",
+    "dev": "cross-env NODE_ENV=development tsx --watch src/main",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@fastify/autoload": "^5.8.0",
+    "@polioan/zod-env": "^1.0.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.24.3",
+    "fastify-zod": "^1.4.0",
+    "http-status": "^1.7.3",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-jsdoc": "^1.1.1",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.1.1",
+    "typescript": "^5.2.2"
+  }
+}
