@@ -19,7 +19,7 @@ async function bootstrap() {
   })
 
   try {
-    await fastify.listen({ port: env('PORT') })
+    await fastify.listen({ port: env('PORT'), host: '0.0.0.0' })
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
